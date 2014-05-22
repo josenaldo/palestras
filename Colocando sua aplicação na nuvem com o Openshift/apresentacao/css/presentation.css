@@ -1,0 +1,21 @@
+.reveal .noborders {
+	border: none;
+}
+
+.reveal .nobg {
+	background: none ;
+}
+
+.reveal .centered {
+	display: block;
+	text-align: center;
+}
+
+.reveal .container {
+	width: 100%;
+}
+
+.reveal .col {
+	padding-left: 10px;
+	padding-right: 10px;
+}
