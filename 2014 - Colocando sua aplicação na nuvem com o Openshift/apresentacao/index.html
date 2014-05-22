@@ -22,7 +22,9 @@
 
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap-theme.min.css">		
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+		<link rel="stylesheet" href="css/presentation.css">
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -47,7 +49,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Colocando sua aplicação na nuvem com o Openshift</h1>					
+					<h1>Colocando sua aplicação na nuvem com o Openshift</h1>
 					<p>
 						<small>Criado por <a href="https://github.com/josenaldo">Josenaldo de Oliveira Matos Filho</a> / <a href="http://twitter.com/josenaldomatos">@josenaldomatos</a></small>
 					</p>
@@ -99,25 +101,31 @@
 					</aside>
 				</section>
 
-				<section>					
+
+				<section>
+					<h2>Introdução ao Openshift</h2>
+					<p></p>
+					<aside class="notes"></aside>
+				</section>
+				<section>
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-3">
-								<h1>IAAS</h1> 
+								<h2>IAAS</h2>
 								<hr>
 								<p>Infraestrutura como Serviço</p>
 							</div>
 							<div class="col-sm-3">
-								<h1>SAAS</h1>
+								<h2>SAAS</h2>
 								<hr>
 								<p>Software como Serviço</p>
 							</div>
 							<div class="col-sm-3">
-								<h1>PASS</h1>
+								<h2>PASS</h2>
 								<hr>
 								<p>Plataforma como Serviço</p>
 							</div>
-						</div> 
+						</div>
 					</div>
 					<aside class="notes">
 						<p>IaaS</p>
@@ -138,16 +146,18 @@
 								PaaS
 							</dt>
 							<dd>
-								
+
 							</dd>
 						</dl>
-						
+
 					</aside>
 				</section>
-				
+
 				<section>
 					<h2>Versões do Openshift</h2>
-					<img src="img/openshift-versions.png" alt="" class="img-responsive">
+					<div class="centered ">
+						<img src="img/openshift-versions.png" alt="" class="noborders nobg">
+					</div>
 					<aside class="notes">
 						<p>
 							Open shift Origin é o projeto do Openshift. É a origem das outras duas versões e está disponível no <a href="http://openshift.github.io/">http://openshift.github.io/</a>. Se você quiser usar essa versão, vai ter de instalá-la em sua própria infraestutura.
@@ -162,6 +172,32 @@
 				</section>
 
 				<section>
+					<h2>Quanto custa rodar sua aplicação</h2>
+
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-3">
+								<h3>FREE</h3>
+								<hr>
+
+							</div>
+							<div class="col-sm-3">
+								<h2>BRONZE</h2>
+								<hr>
+
+							</div>
+							<div class="col-sm-3">
+								<h2>SILVER</h2>
+								<hr>
+
+							</div>
+						</div>
+					</div>
+
+				</section>
+
+
+				<section>
 					<h2>Alguns termos...</h2>
 					<ul>
 						<li class="fragment">Application</li>
@@ -174,7 +210,7 @@
 							</ul>
 						</li>
 						<li class="fragment">Scalable application</li>
-						<li class="fragment">Client tools, Web Console, or Eclipse plug-ins</li>						
+						<li class="fragment">Client tools, Web Console, or Eclipse plug-ins</li>
 					</ul>
 					<aside class="notes">
 						<p>
@@ -186,19 +222,19 @@
 				<section>
 					<h2>Algumas tecnologias...</h2>
 					<ul>
-						<li class="fragment">SSH</li>						
+						<li class="fragment">SSH</li>
 						<li class="fragment">Git</li>
-						<li class="fragment">Eclipse</li>						
+						<li class="fragment">Eclipse</li>
 					</ul>
 					<aside class="notes">
 						<p>
 							Acessando sua aplicação remotamente: <a href="https://www.openshift.com/developers/remote-access">https://www.openshift.com/developers/remote-access</a>
 						</p>
 						<p>
-							Habilitando o redirecionamento de portas: <a href="https://www.openshift.com/blogs/getting-started-with-port-forwarding-on-openshift">https://www.openshift.com/blogs/getting-started-with-port-forwarding-on-openshift</a>							
+							Habilitando o redirecionamento de portas: <a href="https://www.openshift.com/blogs/getting-started-with-port-forwarding-on-openshift">https://www.openshift.com/blogs/getting-started-with-port-forwarding-on-openshift</a>
 						</p>
 						<p>
-							Git - Guia Prático <a href="http://rogerdudler.github.io/git-guide/index.pt_BR.html">http://rogerdudler.github.io/git-guide/index.pt_BR.html</a>						
+							Git - Guia Prático <a href="http://rogerdudler.github.io/git-guide/index.pt_BR.html">http://rogerdudler.github.io/git-guide/index.pt_BR.html</a>
 						</p>
 						<p>
 							Livro Pro Git - <a href="http://git-scm.com/book/pt-br">http://git-scm.com/book/pt-br</a>
@@ -208,23 +244,330 @@
 
 				<section>
 					<h1>Autobots, Roll Out!</h1>
-					<img src="img/optimus.png" alt="" class="img-responsive">			
+					<div class="centered">
+						<img src="img/optimus.png" alt="" class="noborders nobg img-responsive">
+					</div>
 				</section>
 
 				<section>
-					<h2></h2>
-					<p></p>
-					<aside class="notes center"></aside>
+					<section>
+						<h1>Passos para criar uma aplicação</h1>
+						<p>AVISO! ESSE PROCESSO É COMPLICADO, EXTREMAMENTE DEMORADO E FRUSTRANTE!</p>
+					</section>
+
+					<section>
+						<h2>Crie uma conta no Openshift</h2>
+						<p>
+							Acesse <a href="https://www.openshift.com/">https://www.openshift.com/</a> e crie sua conta.
+						</p>
+						<p>Tempo estimado: 5 dias.</p>
+					</section>
+
+					<section>
+						<h2>Instale o RHC</h2>
+						<p>
+							Acesse <a href="https://www.openshift.com/developers/rhc-client-tools-install">https://www.openshift.com/developers/rhc-client-tools-install</a> e veja como instalar o RHC.
+						</p>
+						<p>Tempo estimado: 45 dias.</p>
+					</section>
+
+					<section>
+						<h2>Configure o RHC</h2>
+						<p>ATENÇÃO! A EXECUÇÃO DOS COMANDOS ABAIXO DEVEM SER FEITAS NA ORDEM EXATA!</p>
+						<pre class="fragment">
+							<code data-trim>
+								$ rhc setup
+							</code>
+						</pre>
+						<p>Tempo estimado: 4 anos e 78 dias.</p>
+						<aside class="notes">
+							<p>
+								Alguns comandos úteis:
+							</p>
+
+							<p>Realiza o setup do RHC para uma outra conta</p>
+							<pre><code data-trim>
+								rhc setup -l outroemail@seuservidor.com
+							</code></pre>
+
+							<p>Faz logout da sua conta</p>
+							<pre><code data-trim>
+								rhc account logout
+							</code></pre>
+
+							<p>Ver informações úteis sobre a aplicação</p>
+							<pre><code data-trim>
+								rhc show-app gambiarra
+							</code></pre>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Finalmente, crie sua aplicação</h2>
+						<p>SE VOCÊ CONSEGUIU CHEGAR ATÉ AQUI, PARABÉNS! AGORA, EXECUTE ESSA SÉRIE DE COMANDOS...</p>
+						<pre class="fragment">
+							<code data-trim>
+								$ rhc app create app_name web_language
+							</code>
+						</pre>
+						<p>Tempo estimado: DESCONHECIDO.</p>
+					</section>
+
+					<aside class="notes center">
+						<p>
+							Você também pode usar o console web!
+						</p>
+						<p>
+							<a href="https://openshift.redhat.com/app/console/applications">https://openshift.redhat.com/app/console/applications</a>
+						</p>
+					</aside>
 				</section>
 
 
+				<section>
+					<section>
+						<h1>Agora vem a parte complicada</h1>
+						<p>Tá achando que criar a aplicação foi fácil? Vejamos se consegue fazer algo de útil agora...</p>
+						<div class="centered">
+							<img src="img/tyson.png" alt="Bad ass over here" class="noborders nobg">
+						</div>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Clonando seu código</h2>
+						<p>Se seu repositório não foi clonado, você pode cloná-lo agora.</p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Workflow básico</h2>
+						<ol>
+							<li>Altere seu código</li>
+							<li>git commit</li>
+							<li>git push</li>
+							<li>Aguarde o build</li>
+						</ol>
+						<aside class="notes"></aside>
+					</section>				
+					<section>
+						<h2>Action hook scripts</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Hot deploy</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+				</section>
 
-				
+				<section>
+					<section>
+						<h2>Adicionando componentes a sua aplicação</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Banco de dados</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Cron</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Jenkins</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Métricas e monitoramento</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Outros cartridges</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Ambiente e gerenciamento de aplicação</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>SSH</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Variáveis de ambiente</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Configurando suas variáveis de ambiente</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Log</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Configurando seu servidor de aplicação e banco de dados</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Marker files</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Dependências</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Como configurar dependências</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Usando suas próprias dependências binárias</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Colocando um banco de dados em sua aplicação</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Redes</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Websockets</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Custom URLs</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Certificados SSL</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Conversando com outros serviços</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Abrindo as portas da sua aplicação</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Disco</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Onde posso escrever no disco</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Determinando o espaço de disco usado</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Copiando arquivos de e para minha máquina local</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Outras opções de storage</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Backup</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Gerenciando deployments e rollbacks</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Application Snapshots</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Fazendo backup do banco de dados</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Colaboração</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Gerenciando multiplas chaves SSH</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Acesso por domínio</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h2>Possíveis workflows</h2>
+						<p></p>
+						<aside class="notes"></aside>
+					</section>
+				</section>
+
+				<!-- section>h2+p+aside.notes  -->
 
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
+
 
 		<script>
 
