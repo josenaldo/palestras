@@ -221,7 +221,7 @@
 						<pre><code data-trim>
 								$ rhc setup
 						</code></pre>
-						<p>Tempo estimado: 4 anos e 78 dias.</p>						
+						<p>Tempo estimado: 4 anos e 78 dias.</p>
 					</section>
 
 					<section>
@@ -237,6 +237,16 @@
 							<li>Usar o JBoss Developer Studio</li>
 						</ul>
 					</section>
+					<section>
+						<div class="centered">
+							<img src="img/languages.png" alt="Bad ass over here" class="noborders nobg">
+						</div>
+					</section>
+					<section>
+						<div class="centered">
+							<img src="img/frameworks.png" alt="Bad ass over here" class="noborders nobg">
+						</div>
+					</section>
 				</section>
 
 
@@ -246,7 +256,7 @@
 						<p>Tá achando que criar a aplicação foi fácil? Vejamos se consegue fazer algo de útil agora...</p>
 						<div class="centered">
 							<img src="img/tyson.png" alt="Bad ass over here" class="noborders nobg">
-						</div>					
+						</div>
 					</section>
 
 					<section>
@@ -284,7 +294,10 @@ $ git add .openshift/markers/hot_deploy
 $ git commit -m "Changing application to hot deploy"
 $ git push
 						</code></pre>
-						<p>Basta renomear o arquivo e executar um novo push reiniciar o servidor</p>					
+						<p>Basta renomear o arquivo e executar um novo push reiniciar o servidor</p>
+					</section>
+					<section>
+						
 					</section>
 				</section>
 
@@ -293,29 +306,27 @@ $ git push
 					<section>
 						<h2>Adicionando componentes a sua aplicação</h2>
 						<p>Agora que sua aplicação foi criada, ela precisa de banco de dados e outros componentes</p>
-						<p>Cartidges to the rescue!</p>						
+						<p>Cartidges to the rescue!</p>
 					</section>
 
 					<section>
-						<h2>Banco de dados</h2>
-						<p>Para adicionar </p>
-						<aside class="notes"></aside>
+						<div class="centered">
+							<img src="img/database.png" alt="Bad ass over here" class="noborders nobg">
+						</div>
 					</section>
 					<section>
-						<h2>Cron</h2>
-						<p></p>
-						<aside class="notes"></aside>
+						<h2>PHPMyAdmin</h2>
+						<h2>RockMongo</h2>
+						<h2>MongoDB Monitoring Service</h2>
 					</section>
 					<section>
 						<h2>Jenkins</h2>
-						<p></p>
-						<aside class="notes"></aside>
-					</section>
-					<section>
-						<h2>Métricas e monitoramento</h2>
-						<p></p>
-						<aside class="notes"></aside>
-					</section>
+						<h2>Cron</h2>
+						<h2>HAProxy</h2>
+						<h2>OpenShift Metrics</h2>
+						<h2>Monit</h2>
+						<h2>MongoDB Monitoring Service</h2>
+					</section>					
 					<section>
 						<h2>Outros cartridges</h2>
 						<p></p>
@@ -520,37 +531,6 @@ $ git push
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
-
-
-		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-				// Parallax scrolling
-				parallaxBackgroundImage: 'img/bg1.png',
-				parallaxBackgroundSize: '2880px 1800px',
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-
-		</script>
-
+		<script src="js/presentation.js"></script>
 	</body>
 </html>
