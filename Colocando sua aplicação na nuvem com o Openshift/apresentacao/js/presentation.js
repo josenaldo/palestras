@@ -27,8 +27,8 @@ Reveal.initialize({
 	]
 });
 
-window.addEventListener("mousedown", handleClick, false);
-window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+//window.addEventListener("mousedown", handleClick, false);
+//window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
  
 function handleClick(e) {
 	e.preventDefault();
