@@ -19,3 +19,19 @@
 	padding-left: 10px;
 	padding-right: 10px;
 }
+
+.reveal .code-big {
+	font-size: 34px;
+	font-weight: bold;
+}
+
+.reveal .center-table {
+	width: 100%;
+	
+}
+
+.reveal .center-table th, 
+.reveal .center-table td {
+	text-align: center;
+	padding: 20px;
+}
