@@ -117,7 +117,13 @@ ul, ol, div, p {
 	    -ms-perspective-origin: 50% 50%;
 	        perspective-origin: 50% 50%;
 }
+
+.reveal .backgrounds {
+	display: none;
+}
+
 .reveal .slides section {
+	
 
 	page-break-after: always !important;
 
@@ -168,6 +174,7 @@ ul, ol, div, p {
 	        transform: none !important;
 }
 .reveal section .slide-background {
+	background-image: url(../../img/bg2.png);
 	position: absolute;
 	top: 0;
 	left: 0;

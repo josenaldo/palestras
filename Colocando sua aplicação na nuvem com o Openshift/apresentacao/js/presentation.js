@@ -13,7 +13,7 @@ Reveal.initialize({
 	transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
 	// Parallax scrolling
-	parallaxBackgroundImage: 'img/bg1.png',
+	parallaxBackgroundImage: 'img/bg1.jpg',
 	parallaxBackgroundSize: '2880px 1800px',
 
 	// Optional libraries used to extend on reveal.js
