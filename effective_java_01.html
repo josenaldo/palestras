@@ -51,20 +51,23 @@
                 <section>
                     <h2>Agenda</h2>
                     <ol class="color4-darker">
-                        <li></li>
+                        <li>Quem somos?</li>
+                        <li>Porque começar pelo Effective Java?</li>
+                        <li>1. Introduction</li>
+                        <li>2. Creating and Destroying Objects</li>
                     </ol>
                 </section>
 
                 <section>
                     <h2>Quem somos?</h2>
-                    <p class="lead color4-darker">Devel.up!</p>
+                    <p class="lead color4-darker">Devel UP!</p>
                     <p class="color5-darker">Grupo de programadores com um objetivo em comum: subir de nível!</p>
                 </section>
 
                 <section>
                     <h2>Como o grupo funciona?</h2>
                     <ul class="color4-darker lead">
-                        <li>Cada temporada, um livro</li>
+                        <li>Cada fase, um livro ou um projeto</li>
                         <li>Cada semana, uma apresentação</li>
                         <li>Conhecimentos aplicados na prática em projetos opensource</li>
                     </ul>
@@ -128,10 +131,7 @@
                     <ul>
                         <li>Item 1. Consider static factory methods instead of constructors</li>
                         <li>Item 2: Consider a builder when faced with many constructor parameters</li>
-                        <li>Item 3: Enforce the singleton property with a private constructor or an enum type</li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li>Item 3: Enforce the singleton property with a private constructor or an enum type</li>                        
                     </ul>
                     
                 </section>
@@ -293,10 +293,22 @@ calories(100).sodium(35).carbohydrate(27).build();
                 <section>
                     <h2>Item 3: Enforce the singleton property with a private constructor or an enum type</h2>
                     <h3 class="color5-darker">
-                        Making a class a singleton can make it difficult to test its clients
+                        Um Singleton é muito difícil, quando não impossível, de testar!
                     </h3>
                 </section>
+                <section>
+                    <h2>Item 3: Enforce the singleton property with a private constructor or an enum type</h2>
+                    <p class="lead color4-darker">Antes do Java 5, havia 2 maneiras de se criar um singleton.</p>
+                    <ul class="color4-darker">
+                        <li>Em ambas:
+                            <ul>
+                                <li>Construtor privado</li>
+                                <li>Acesso através de um mebro público</li>
+                            </ul>            
+                        </li>                        
+                    </ul>
 
+                </section>
                 <section>
                     <h2>Item 3: Enforce the singleton property with a private constructor or an enum type</h2>
                     <h3 class="color4-darker">
