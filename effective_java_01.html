@@ -289,9 +289,10 @@ calories(100).sodium(35).carbohydrate(27).build();
                         Usar quando sua classe possui construtores ou fábricas com muitos parâmetros. Principalmente se muitos deles forem opcionais.
                     </h3>
                 </section>
-
+                
                 <section>
                     <h2>Item 3: Enforce the singleton property with a private constructor or an enum type</h2>
+                    <h3 class="color4-darker">Um Singleton é uma classe que é instanciada apenas uma vez.</h3>
                     <h3 class="color5-darker">
                         Um Singleton é muito difícil, quando não impossível, de testar!
                     </h3>
@@ -303,7 +304,7 @@ calories(100).sodium(35).carbohydrate(27).build();
                         <li>Em ambas:
                             <ul>
                                 <li>Construtor privado</li>
-                                <li>Acesso através de um mebro público</li>
+                                <li>Acesso através de um membro público estático</li>
                             </ul>            
                         </li>                        
                     </ul>
@@ -326,6 +327,14 @@ public class Elvis {
                 </section>
                 <section>
                     <h2>Item 3: Enforce the singleton property with a private constructor or an enum type</h2>
+                    <h3 class="color4-darker">
+                        Singleton with public final field
+                    </h3>
+                    <p class="lead color4-dark">Problema: um cliente pode invocar o construtor usando reflection</p>
+                    <p class="lead color4-dark">Solução: o construtor lança uma exceção se for chamado mais de uma vez</p>
+                </section>               
+                <section>
+                    <h2>Item 3: Enforce the singleton property with a private constructor or an enum type</h2>
                     <h3 class="color4-darker">Singleton with static factory</h3>
                     <pre><code data-trim>
 public class Elvis {
@@ -339,12 +348,43 @@ public class Elvis {
 }
                     </code></pre>
                 </section>
+                <section>
+                    <h2>Item 3: Enforce the singleton property with a private constructor or an enum type</h2>
+                    <h3 class="color4-darker">Problemas com serialização?</h3>
+                    <p class="lead color4-dark">Torne os campos transientes</p>
+                    <pre><code data-trim>
+// readResolve method to preserve singleton property
+private Object readResolve() {
+    // Return the one true Elvis and let the garbage collector
+    // take care of the Elvis impersonator.
+    return INSTANCE;
+}
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Item 3: Enforce the singleton property with a private constructor or an enum type</h2>
+                    <h3 class="color4-darker">Singleton with static factory</h3>
+                    <p class="lead color4-dark">Mesmos problemas da solução anterior.</p>
+                    <p class="lead color4-dark">Uma vantagem: você pode mudar de idéia sobre a classe ser um singleton sem mudar a API</p>
+                </section>
+
                  <section>
                     <h2>Item 3: Enforce the singleton property with a private constructor or an enum type</h2>
-                    <h3 class="color4-darker"></h3>
+                    <h3 class="color4-darker">A partir do Java 5 (ou seja, há tempo pra caralho) existe uma terceira abordagem</h3>
                     <pre><code data-trim>
-
+// Enum singleton - the preferred approach
+public enum Elvis {
+    INSTANCE;
+    public void leaveTheBuilding() { ... }
+}
                     </code></pre>
+                </section>
+                <section>
+                    <h2>Criar Singletons usando enum é o melhor caminho!</h2>                    
+                    <h3 class="color4-darker">Equivalente ao public field mas...</h3>
+                    <p class="lead color4-dark">Mais concisa</p>
+                    <p class="lead color4-dark">Parafernália de serialização "de grátis"</p>
+                    <p class="lead color4-dark">Imune a múltiplas instâncias</p>
                 </section>
       
                 <section>
