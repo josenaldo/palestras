@@ -131,9 +131,9 @@
                     <ul>
                         <li>Item 1. Consider static factory methods instead of constructors</li>
                         <li>Item 2: Consider a builder when faced with many constructor parameters</li>
-                        <li>Item 3: Enforce the singleton property with a private constructor or an enum type</li>                        
+                        <li>Item 3: Enforce the singleton property with a private constructor or an enum type</li>
                     </ul>
-                    
+
                 </section>
 
                 <section>
@@ -274,7 +274,7 @@ calories(100).sodium(35).carbohydrate(27).build();
                         <li>Código cliente mais fácil de ler e de escrever que o telescoping constructor</li>
                         <li>Código cliente mais seguro do que o que usa JavaBeans</li>
                     </ul>
-                </section>                
+                </section>
                 <section>
                     <h2>Item 2: Consider a builder when faced with many constructor parameters</h2>
                     <h3>Desvantagens</h3>
@@ -289,7 +289,7 @@ calories(100).sodium(35).carbohydrate(27).build();
                         Usar quando sua classe possui construtores ou fábricas com muitos parâmetros. Principalmente se muitos deles forem opcionais.
                     </h3>
                 </section>
-                
+
                 <section>
                     <h2>Item 3: Enforce the singleton property with a private constructor or an enum type</h2>
                     <h3 class="color4-darker">Um Singleton é uma classe que é instanciada apenas uma vez.</h3>
@@ -305,8 +305,8 @@ calories(100).sodium(35).carbohydrate(27).build();
                             <ul>
                                 <li>Construtor privado</li>
                                 <li>Acesso através de um membro público estático</li>
-                            </ul>            
-                        </li>                        
+                            </ul>
+                        </li>
                     </ul>
 
                 </section>
@@ -318,9 +318,9 @@ calories(100).sodium(35).carbohydrate(27).build();
                     <pre><code data-trim>
 public class Elvis {
     public static final Elvis INSTANCE = new Elvis();
-    
+
     private Elvis() { ... }
-    
+
     public void leaveTheBuilding() { ... }
 }
                     </code></pre>
@@ -332,7 +332,7 @@ public class Elvis {
                     </h3>
                     <p class="lead color4-dark">Problema: um cliente pode invocar o construtor usando reflection</p>
                     <p class="lead color4-dark">Solução: o construtor lança uma exceção se for chamado mais de uma vez</p>
-                </section>               
+                </section>
                 <section>
                     <h2>Item 3: Enforce the singleton property with a private constructor or an enum type</h2>
                     <h1 class="color5-darker">DEMO</h1>
@@ -346,11 +346,11 @@ public class Elvis {
                     <pre><code data-trim>
 public class Elvis {
     private static final Elvis INSTANCE = new Elvis();
-    
+
     private Elvis() { ... }
-    
+
     public static Elvis getInstance() { return INSTANCE; }
-    
+
     public void leaveTheBuilding() { ... }
 }
                     </code></pre>
@@ -408,7 +408,80 @@ public enum Elvis {
                         https://github.com/uaijug/develup-effective-java
                     </a>
                 </section>
-      
+
+                <section>
+                    <h2>Item 4: Enforce noninstantiability with a private constructor</h2>
+                    <h3 class="color4-darker">Eventualmente, queremos escrever classes que são apenas grupos de campos e métos estáticos</h3>
+                    <h3 class="color4-dark">Apesar da má fama, essas classes têm usos válidos</h3>
+                    <h3 class="color4-dark">java.util.Math ou java.util.Collections</h3>
+                    <p class="lead color5-darker">Classes utilitárias</p>
+                </section>
+                <section>
+                    <h2>Item 4: Enforce noninstantiability with a private constructor</h2>
+                    <h3 class="color4-darker">Essas classes não foram feitas para ser instanciadas!</h3>
+                    <h3 class="color5-darker">Criar instâncias de utilitárias pode levar a erros no futuro</h3>
+                </section>
+                <section>
+                    <h2>Item 4: Enforce noninstantiability with a private constructor</h2>
+                    <h3 class="color4-dark">Mesmo sem um construtor, podemos instanciá-las</h3>
+                    <h3 class="color5-darker">O compilador pode criar um construtor!</h3>
+                </section>
+                <section>
+                    <h2>Item 4: Enforce noninstantiability with a private constructor</h2>
+                    <h3 class="color4-dark">Torná-las abstratas não é suficiente</h3>
+                    <h3 class="color5-darker">Uma subclasse pode ser instanciada</h3>
+                    <h3 class="color5-darker">O usuário pode achar que essa classe deve ser herdada</h3>
+                </section>
+                <section>
+                    <h2>Item 4: Enforce noninstantiability with a private constructor</h2>
+                    <h3 class="color4-darker">Solução: fornecer um construtor privado!</h3>
+                    <pre><code data-trim>
+// Noninstantiable utility class
+public class UtilityClass {
+    // Suppress default constructor for noninstantiability
+    private UtilityClass() {
+        throw new AssertionError();
+    }
+... // Remainder omitted
+}
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Item 4: Enforce noninstantiability with a private constructor</h2>
+                    <h3 class="color4-darker">Construtor não pode ser acessado fora da classe</h3>
+                    <h3 class="color4-dark">O AssertionError não é obrigatório, mas garante que o construtor não vai ser chamado DENTRO da classe</h3>
+                    <h3 class="color5-darker">A classe não pode ser instanciada</h3>
+                </section>
+
+                <section>
+                    <h2>Item 5: Avoid creating unnecessary objects</h2>
+                    <h3 class="color4-darker">Frequentemente, é melhor reutilizar uma instância do que criar uma, principalmente se:</h3>
+                    <ul>
+                        <li>O objeto é imutável</li>
+                        <li>O objeto é mutável, mas não será modificado</li>
+                    </ul>
+                    <pre><code data-trim>
+                        String s = new String("stringette"); // DON'T DO THIS!
+                    </code></pre>
+                    <pre><code data-trim>
+                        String s = "stringette"; //DO THIS!
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Item 5: Avoid creating unnecessary objects</h2>
+                    <h3 class="color4-darker"></h3>
+                </section>
+                <section>
+                    <h2>Item 5: Avoid creating unnecessary objects</h2>
+                    <h3 class="color4-darker"></h3>
+                </section>
+                <section>
+                    <h2>Item 5: Avoid creating unnecessary objects</h2>
+                    <h3 class="color4-darker"></h3>
+                </section>
+
+
+
                 <section>
                     <h2>Contatos</h2>
                     <ul class="color4-darker">
