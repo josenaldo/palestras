@@ -48,6 +48,38 @@
     max-height: 70%
 }
 
+.reveal .img-80 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-height: 80%
+}
+
+.reveal .clean-img {
+    height: auto;
+    border: none;
+    background: none ;
+    box-shadow: none;
+    display: inline-block;
+    padding-bottom: 100px;
+}
+
+.reveal .noborders {
+    border: none;
+}
+
+.reveal .nobg {
+    background: none ;
+}
+
+.reveal .centered {
+    display: block;
+    text-align: center;
+}
+
+.reveal .noshadow {
+    box-shadow: none;
+}
+
 /* pallet: http://paletton.com/#uid=73p0u0k8fnv2uA35ds6bljwdIdF */;
 .reveal .color1 {
     color: #586E75

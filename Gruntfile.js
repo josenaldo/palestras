@@ -82,6 +82,9 @@ module.exports = function(grunt) {
 					port: port,
 					base: '.'
 				}
+			},
+			options: {
+				livereload:true
 			}
 		},
 
@@ -104,7 +107,13 @@ module.exports = function(grunt) {
 			theme: {
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
 				tasks: 'themes'
-			}
+			},
+			livereload: {
+		      options: { livereload: true },
+		      files: ['./*.html'],
+		      debounceDelay: 20
+		    },
+
 		}
 
 	});
